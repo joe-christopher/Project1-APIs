@@ -3,7 +3,7 @@
 var apiKey = "AIzaSyAayGDTZosMnbroBx71FzowCC-bB1bPEno";
 var part = "snippet";
 var t = "jsonc"
-var q = "Vento Wifi Drone unboxing" //hard coded for testing
+var q = "beats solo 3 wireless review unboxing" //hard coded for testing
 var maxResults = 4;
 var type = "video";
 
@@ -29,8 +29,8 @@ function runYTQuery(queryYTURL) {
 
     console.log(YTData);
 
-    // var iframeString = "<iframe width=\"420\" height=\"345\" src=\"https://www.youtube.com/embed/";
-    //loop to set video id from 3 objects returned from API
+
+    //loop to set video id from 4 objects returned from API, dump to div
     for (i = 0; i < maxResults; i++){
      
         var iframeString = "<iframe id=ytvid" + i + " width=\"420\" height=\"345\" src=\"https://www.youtube.com/embed/"
