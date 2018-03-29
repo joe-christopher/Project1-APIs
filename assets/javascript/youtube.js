@@ -3,7 +3,7 @@
 var apiKey = "AIzaSyAayGDTZosMnbroBx71FzowCC-bB1bPEno";
 var part = "snippet";
 var t = "jsonc"
-var q = "hero 6 unboxing" //hard coded for testing
+var q = "iphone x unboxing" //hard coded for testing
 var maxResults = 3;
 var type = "video";
 
@@ -30,6 +30,7 @@ function runYTQuery(queryYTURL) {
     
   })
 
+  
 }
 
 runYTQuery(queryYTURL); //test function call
