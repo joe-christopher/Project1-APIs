@@ -40,15 +40,16 @@ function runBBQuery(queryBBURL) {
     url: queryBBURL,
     method: "GET"
   }).done(function(BBData) {
-  
 
   
     $(".productdetails").append('<p> Name: ' + BBData.products[0].name + '</p>');
     $(".productdetails").append('<p> Description: ' + BBData.products[0].description + '</p>');
+    $(".productdetails").append('<p> Manufacturer: ' + BBData.products[0].manufacturer + '</p>');
     $(".productdetails").append('<p> Model Number: ' + BBData.products[0].modelNumber + '</p>');
     $(".productdetails").append('<p> Regular Price: ' + BBData.products[0].regularPrice + '</p>');
     $(".productdetails").append('<p> Sale Price: ' + BBData.products[0].salePrice + '</p>');
     $(".productdetails").append('<p> UPC: ' + BBData.products[0].upc + '</p>');
+    $(".productdetails").append('<p> URL: ' + BBData.products[0].url + '</p>');
     $(".productdetails").append('<img src=' + BBData.products[0].image + '>');
 
     // Log the BBData to console, where it will show up as an object

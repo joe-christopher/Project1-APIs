@@ -43,7 +43,6 @@ function runYTQuery(queryYTURL) {
 
     console.log(YTData);
 
-
     //loop to set video id from 4 objects returned from API, dump to div
     for (i = 0; i < maxResults; i++){
      
