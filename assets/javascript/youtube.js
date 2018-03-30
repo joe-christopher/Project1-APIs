@@ -3,15 +3,29 @@
 var apiKey = "AIzaSyAayGDTZosMnbroBx71FzowCC-bB1bPEno";
 var part = "snippet";
 var t = "jsonc"
-var q = "beats solo 3 wireless review unboxing" //hard coded for testing
+var q = "";
 var maxResults = 4;
 var type = "video";
+var queryYTURL = "";
 
 
-var queryYTURL = "https://www.googleapis.com/youtube/v3/search?part=" + part + "&key=" + apiKey + "&maxResults=" + maxResults + 
-"&type=" + type + "&q=" + q + "&t=" + t;
+	//Grabbing the values from the inputs and setting them to the global variables
+	$("#submit").on("click", function(event){
 
-// console.log(queryYTURL);
+		event.preventDefault();
+
+		//set vars with input box values
+        q = $("#productName").val().trim();
+        
+        queryYTURL = "https://www.googleapis.com/youtube/v3/search?part=" + part + "&key=" + apiKey + "&maxResults=" + maxResults + 
+        "&type=" + type + "&q=" + q + " review unboxing&t=" + t;
+        
+        console.log("Product : " + q);
+        console.log(queryYTURL);
+
+        runYTQuery(queryYTURL); //test function call
+    });
+    
 
 // This runYTQuery function expects 1 parameter: the final URL to download data from)
 function runYTQuery(queryYTURL) {
@@ -49,5 +63,5 @@ function runYTQuery(queryYTURL) {
 }
 
 
-runYTQuery(queryYTURL); //test function call
+
 
