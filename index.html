@@ -9,9 +9,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-
 <body>
-
     <div class="container">
         <div class="jumbotron">
             <h1>Hello, world!</h1>
@@ -19,103 +17,93 @@
             <p>
                 <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
             </p>
-
         </div>
         <div id="wrapper">
             <div id="panels container-fluid">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Produt Details</div>
+                    <div class="panel-heading">Product Details</div>
                     <div class="panel-body">
-                        <div class="panel-body">
-                            <form>
+                        <form>
+                            <div class="form-group">
+                                <label for="Product Category">Product Category</label>
+                                <select class="form-control" id="Product Categories">
+                                    <option>All Cell Phones with plans:</option>
+                                    <option>Computers:</option>
+                                    <option>Dgital Cameras:</option>
+                                    <option>Health, fitness & Beauty</option>
+                                    <option>Headphones:</option>
+                                    <option>Home Audio</option>
+                                    <option>Home Automation & Security</option>
+                                    <option>Ipads, Tablets, & E-Readers</option>
+                                    <option>Laptops</option>
+                                    <option>Nintendo 3Ds</option>
+                                    <option>Playstation 4</option>
+                                    <option>Portable & Wireless Speakers</option>
+                                    <option>PS Vita</option>
+                                    <option>Ranges, Cooktops, & Ovens</option>
+                                    <option>Refrigerators</option>
+                                    <option>Small Kitchen Appliances</option>
+                                    <option>Tvs</option>
+                                    <option>Washers & Dryers</option>
+                                    <option>Wii U</option>
+                                    <option>Xbox One</option>
+                                </select>
                                 <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Product Category</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>All Cell Phones with plans:</option>
-                                        <option>Computers:</option>
-                                        <option>Dgital Cameras:</option>
-                                        <option>Health, fitness & Beauty</option>
-                                        <option>Headphones:</option>
-                                        <option>Home Audio</option>
-                                        <option>Home Automation & Security</option>
-                                        <option>Ipads, Tablets, & E-Readers</option>
-                                        <option>Laptops</option>
-                                        <option>Nintendo 3Ds</option>
-                                        <option>Playstation 4</option>
-                                        <option>Portable & Wireless Speakers</option>
-                                        <option>PS Vita</option>
-                                        <option>Ranges, Cooktops, & Ovens</option>
-                                        <option>Refrigerators</option>
-                                        <option>Small Kitchen Appliances</option>
-                                        <option>Tvs</option>
-                                        <option>Washers & Dryers</option>
-                                        <option>Wii U</option>
-                                        <option>Xbox One</option>
-                                    </select>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlInput1">Product Name</label>
-                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Keyword(s)">
-                                    </div>
+                                    <label for="exampleFormControlInput1">Product Name</label>
+                                    <input type="email" class="form-control" id="Search Keyword" placeholder="Enter Keyword(s)">
                                 </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Product Images</h3>
                             </div>
-
-
-                            <div class="row">
-                                <div class="col-xs-6 col-md-3">
-                                    <a href="#" class="thumbnail">
-                                        <img src="http://via.placeholder.com/550x450" alt="...">
-                                    </a>
+                            <!-- thumbnails are used to hold a place for the images from Best Buy API -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Product Images</h3>
                                 </div>
-                                <div class="col-xs-6 col-md-3">
-                                    <a href="#" class="thumbnail">
-                                        <img src="http://via.placeholder.com/550x450" alt="...">
-                                    </a>
-                                </div>
-                                <div class="col-xs-6 col-md-3">
-                                    <a href="#" class="thumbnail">
-                                        <img src="http://via.placeholder.com/550x450" alt="...">
-                                    </a>
-                                </div>
-                                <div class="col-xs-6 col-md-3">
-                                    <a href="#" class="thumbnail">
-                                        <img src="http://via.placeholder.com/550x450" alt="...">
-                                    </a>
-                                </div>
-                                <div class="col-md-12 sidenav">
-                                    <div class="well">
-                                        <h2>Video/Unboxing Reviews</h2>
-                                        <!-- Youtube videos dumped here -->
-                                        <hr>
-                                        <div id="youtube col-md-12">
-                                            <iframe width="400" height="250" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                                            </iframe>
-                                            <iframe width="400" height="250" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                                            </iframe>
-                                            <iframe width="400" height="250" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                                            </iframe>
-                                            <iframe width="400" height="250" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                                            </iframe>
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-3">
+                                        <a href="#" class="thumbnail">
+                                            <img src="http://via.placeholder.com/550x450" alt="...">
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-6 col-md-3">
+                                        <a href="#" class="thumbnail">
+                                            <img src="http://via.placeholder.com/550x450" alt="...">
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-6 col-md-3">
+                                        <a href="#" class="thumbnail">
+                                            <img src="http://via.placeholder.com/550x450" alt="...">
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-6 col-md-3">
+                                        <a href="#" class="thumbnail">
+                                            <img src="http://via.placeholder.com/550x450" alt="...">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 sidenav">
+                                        <div class="well">
+                                            <h2>Video/Unboxing Reviews</h2>
+                                            <!-- Youtube videos dumped here -->
+                                            <hr>
+                                            <div id="youtube col-md-12">
+                                                <iframe width="400" height="250" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                                                </iframe>
+                                                <iframe width="400" height="250" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                                                </iframe>
+                                                <iframe width="400" height="250" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                                                </iframe>
+                                                <iframe width="400" height="250" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                                                </iframe>
+                                            </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-                        </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
-
     </div>
-
-
+    </div>
     </form>
     </div>
     </div>
