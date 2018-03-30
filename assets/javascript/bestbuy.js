@@ -19,7 +19,7 @@ var catagoryId = "";
         catagoryId = $("#catId").val();
 
         queryBBURL = "https://api.bestbuy.com/v1/products((search=" + q + ")&(categoryPath.id=" + catagoryId + "))?apiKey=" +
-        BBapiKey + "&sort=name.asc&show=name,description,image,modelNumber,regularPrice,upc,salePrice,features.feature&pageSize=1&format=json";
+        BBapiKey + "&sort=name.asc&show=name,description,image,images,modelNumber,regularPrice,upc,salePrice,features.feature&pageSize=20&format=json";
         
         console.log("Product : " + q);
         console.log("ID : " + catagoryId);
