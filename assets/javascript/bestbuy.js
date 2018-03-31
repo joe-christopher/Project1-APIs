@@ -1,64 +1,60 @@
-          
-    $("#SearchBtn").on("click", function(event) {
+   //Best Buy API parameters, hard coded  product name and category for testing
+var BBapiKey = "lHzfxhG8ouWxpRucN0nkcCCa";
+var queryBBURL = "";
+var catagoryId = "";
 
-      event.preventDefault();
-    
-      var apikey = "lHzfxhG8ouWxpRucN0nkcCCa";
-      
-      var category = $("#exampleFormControlSelect1").val().trim();
-      var title = $("#exampleFormControlInput1").val().trim();
-      var revtitle = title.replace(" ","&search=");
-      
-      var limits = "5";
-      // var limits = $("#").val().trim();
+	//Grabbing the values from the inputs and setting them to the global variables
+	$("#submit").on("click", function(event){
 
-      console.log("here's the ID: ", category);  
-      console.log("here's the title: ", title);    
-      
-       
-      //ajax request.
-      var queryURL = "https://api.bestbuy.com/v1/products((search=" + revtitle + ")&(categoryPath.id="+ category + "))?apiKey=" + apikey +
-      "&pageSize=" + limits + "&format=json";
+		event.preventDefault();
 
-      $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
+		//set vars with input box values
+        q = $("#productName").val().trim();
+        console.log("q before " + q);
+        q = q.split(" ").join("&search=");
+        console.log("q after " + q);
 
-       
-      //for loop if items = 1, 5 or 10.      
-      for (var i = 0; i < limits; i++) {       
+     
+        catagoryId = $("#catId").val();
 
-      //add features or description????
-      
-      console.log("URL: ", response.products[i].url);
+        queryBBURL = "https://api.bestbuy.com/v1/products((search=" + q + ")&(categoryPath.id=" + catagoryId + "))?apiKey=" +
+        BBapiKey + "&sort=name.asc&show=name,description,image,images,modelNumber,regularPrice,upc,salePrice,features.feature&pageSize=20&format=json";
+        
+        console.log("Product : " + q);
+        console.log("ID : " + catagoryId);
 
-      console.log("Brand: ", response.products[i].manufacturer);
-      console.log("Model #: ", response.products[i].modelNumber);
-      console.log("Item name: ", response.products[i].name);
-      console.log("UPC: ", response.products[i].upc);
-      console.log("SKU #: ", response.products[i].sku);
-      console.log("Color: ", response.products[i].color);
-      console.log("Rg price$: ", response.products[i].regularPrice);
-      console.log("Sale price$: ", response.products[i].salePrice);
+        console.log(queryBBURL);
 
-      console.log("reg image: ", response.products[i].image);
-      console.log("medium image: ", response.products[i].mediumImage);
-      console.log("thumbnail image: ", response.products[i].thumbnailImage);
-
-      // display products to html.
-      $("#productView").empty();
-
-      $("#productView").append('<p> Brand: ' + response.products[i].manufacturer + '</p>');
-      $("#productView").append('<p> Name: ' + response.products[i].name + '</p>');
-      $("#productView").append('<p> SKU: ' + response.products[i].sku + '</p>');
-      $("#productView").append('<img src=' + response.products[i].mediumImage + '>');
-
-           
-      }
+        runBBQuery(queryBBURL);
     });
 
-  }); // search btn function ends here
 
-  // need to add error function.
-  // need to add clear function.
+// This runBBQuery function expects 1 parameter: the final URL to download data from)
+function runBBQuery(queryBBURL) {
+
+  // The AJAX function uses the queryBBURL and GETS the JSON data associated with it.
+  // The data then gets stored in the variable called: "BBData"
+
+  $.ajax({
+    url: queryBBURL,
+    method: "GET"
+  }).done(function(BBData) {
+
+  
+    $("#product-info").append('<p> Name: ' + BBData.products[0].name + '</p>');
+    $("#product-info").append('<p> Description: ' + BBData.products[0].description + '</p>');
+    $("#product-info").append('<p> Manufacturer: ' + BBData.products[0].manufacturer + '</p>');
+    $("#product-info").append('<p> Model Number: ' + BBData.products[0].modelNumber + '</p>');
+    $("#product-info").append('<p> Regular Price: ' + BBData.products[0].regularPrice + '</p>');
+    $("#product-info").append('<p> Sale Price: ' + BBData.products[0].salePrice + '</p>');
+    $("#product-info").append('<p> UPC: ' + BBData.products[0].upc + '</p>');
+    $("#product-info").append('<p> URL: ' + BBData.products[0].url + '</p>');
+    $("#product-pic").append('<img src=' + BBData.products[0].image + '>');
+
+    // Log the BBData to console, where it will show up as an object
+    console.log(BBData);
+    
+  })
+
+}
+
