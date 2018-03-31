@@ -10,3 +10,28 @@ iframe{
 h2{
     text-align: center;
 }
+
+body {
+    background-color: aquamarine;
+}
+
+button {
+    background-color: darkgray;
+    color: white;
+}
+#panelTitle {
+    font-size: 20px;
+}
+#panelHeading {
+    background-color: dimgrey;
+}
+#panel-body {
+    background-color: darkred;
+}
+#product-details {
+    background-color: dimgrey;
+    height: 40px;
+    }
+p {
+    font-size: 20px;
+}

@@ -14,15 +14,10 @@ var queryYTURL = "";
 
       event.preventDefault();
 
-      // q = $('select option:selected').text();
+      //grab the label from the option selection drop down list
+      //and use to search youtube and display specific product details
       q = $("#specId option:selected").text();
       console.log(q);
-      // console.log("result = " + result);
-
-      // //set vars with input box values
-      // q = $("#productName").val().trim();
-
-      // clearInputs();//function call to clear input values
 
       queryYTURL = "https://www.googleapis.com/youtube/v3/search?part=" + part + "&key=" + apiKey + "&maxResults=" + maxResults + 
       "&type=" + type + "&q=" + q + " review unboxing&t=" + t;
@@ -42,7 +37,7 @@ function runYTQuery(queryYTURL) {
       method: "GET"
     }).done(function(YTData) {
 
-      $(".well").empty(); //clear div before appending videos
+      $(".wells").empty(); //clear div before appending videos
 
         //loop to set video id from 4 objects returned from API, dump to div
         for (i = 0; i < maxResults; i++){
@@ -50,7 +45,7 @@ function runYTQuery(queryYTURL) {
           var iframeString = "<iframe id=ytvid" + i + " width=\"420\" height=\"345\" src=\"https://www.youtube.com/embed/"
           + YTData.items[i].id.videoId + "\"><iframe>";  //build iframe element
 
-        $(".well").append(iframeString);  //add iframe elemen to div
+        $(".wells").append(iframeString);  //add iframe elemen to div
    
     }
 
@@ -60,17 +55,34 @@ function runYTQuery(queryYTURL) {
   
 }
 
+$("#clearBtn").on("click", function(event){
+
+  event.preventDefault();
+  clearAll();
+
+});
+
 function clearInputs()  //function to clear user input fields
 {
   $("#productName").val("");  //clears input box
   $("#catId").val("default"); //clears option box to default value
-  $('#specId')
+  $('#specId')  //clears 2nd option box with API data
     .find('option')
     .remove()
     .end();
-
 }
 
-
+function clearAll() //clears inputs and divs
+{
+  $("#productName").val("");  //clears input box
+  $("#catId").val("default"); //clears option box to default value
+  $('#specId')  //clears 2nd option box with API data
+    .find('option')
+    .remove()
+    .end();
+  $(".wells").empty(); 
+  $("#product-info").empty();
+  $("#product-pic").empty(); 
+}
 
 
