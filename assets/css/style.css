@@ -1,3 +1,7 @@
+#ytvid0,
+#ytvid1,
+#ytvid2,
+#ytvid3,
 iframe{
     margin-left: 70px;
     margin-top: 15px;
@@ -5,4 +9,35 @@ iframe{
 
 h2{
     text-align: center;
+}
+
+body, .jumbotron {
+    background-color:#163b61;
+    color: white;
+}
+
+button {
+    background-color: darkgray;
+    color: white;
+}
+#panelTitle {
+    font-size: 20px;
+}
+#panelHeading {
+    background-color: dimgrey;
+}
+#panel-body {
+    background-color: darkred;
+}
+
+#product-info {
+    color: black;
+}
+#product-details {
+    background-color: dimgrey;
+
+    height: 40px;
+    }
+p {
+    font-size: 20px;
 }
