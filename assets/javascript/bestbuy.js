@@ -29,7 +29,6 @@ var specificId = "";
 // This runBBQuery function expects 1 parameter: the final URL to download data from)
 function runBBQuery(queryBBURL) {
 
-  console.log()
   // The AJAX function uses the queryBBURL and GETS the JSON data associated with it.
   // The data then gets stored in the variable called: "BBData"
 
@@ -40,7 +39,7 @@ function runBBQuery(queryBBURL) {
 
     console.log(BBData);
   
-    //populate new option list with values from API call
+    //populate new option list with values returned from API call
     $.each(BBData.products, function( index, name ){
       $('#specId').append($('<option>', { 
         value: index,
@@ -48,21 +47,32 @@ function runBBQuery(queryBBURL) {
       }));
     });
 
-    specificId = $("#specId").val();
+    $("#submit2").on("click", function(event){
+      
+      event.preventDefault();
 
-    $(".productdetails").append('<p> Name: ' + BBData.products[specificId].name + '</p>');
-    $(".productdetails").append('<p> Description: ' + BBData.products[specificId].description + '</p>');
-    $(".productdetails").append('<p> Short Description: ' + BBData.products[specificId].shortDescription + '</p>');
-    $(".productdetails").append('<p> Manufacturer: ' + BBData.products[specificId].manufacturer + '</p>');
-    $(".productdetails").append('<p> Model Number: ' + BBData.products[specificId].modelNumber + '</p>');
-    $(".productdetails").append('<p> Regular Price: ' + BBData.products[specificId].regularPrice + '</p>');
-    $(".productdetails").append('<p> Sale Price: ' + BBData.products[specificId].salePrice + '</p>');
-    $(".productdetails").append('<p> Customer Review Average: ' + BBData.products[specificId].customerReviewAverage  + '</p>');
-    $(".productdetails").append('<p> UPC: ' + BBData.products[specificId].upc + '</p>');
-    $(".productdetails").append('<p> URL: ' + BBData.products[specificId].url + '</p>');
-    $(".productdetails").append('<p> Mobile URL: ' + BBData.products[specificId].mobileUrl + '</p>');
-    $(".productdetails").append('<img src=' + BBData.products[specificId].image + '>');
+      specificId = $("#specId").val(); //get index from new option list
+ 
+      //output product details to UI
+      $(".productdetails").append('<p> Name: ' + BBData.products[specificId].name + '</p>');
+      $(".productdetails").append('<p> Description: ' + BBData.products[specificId].description + '</p>');
+      $(".productdetails").append('<p> Short Description: ' + BBData.products[specificId].shortDescription + '</p>');
+      $(".productdetails").append('<p> Manufacturer: ' + BBData.products[specificId].manufacturer + '</p>');
+      $(".productdetails").append('<p> Model Number: ' + BBData.products[specificId].modelNumber + '</p>');
+      $(".productdetails").append('<p> Regular Price: ' + BBData.products[specificId].regularPrice + '</p>');
+      $(".productdetails").append('<p> Sale Price: ' + BBData.products[specificId].salePrice + '</p>');
+      $(".productdetails").append('<p> Customer Review Average: ' + BBData.products[specificId].customerReviewAverage  + '</p>');
+      $(".productdetails").append('<p> UPC: ' + BBData.products[specificId].upc + '</p>');
+      $(".productdetails").append('<p> URL: ' + BBData.products[specificId].url + '</p>');
+      $(".productdetails").append('<p> Mobile URL: ' + BBData.products[specificId].mobileUrl + '</p>');
+      $(".productdetails").append('<img src=' + BBData.products[specificId].image + '>');
+
+    });
+
    
-  })
+})
+
+
+
 
 }
