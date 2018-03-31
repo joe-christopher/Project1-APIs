@@ -52,7 +52,11 @@ function runBBQuery(queryBBURL) {
       event.preventDefault();
 
       specificId = $("#specId").val(); //get index from new option list
- 
+      
+      console.log("index for bb " + specificId);
+
+      $(".productdetails").empty();  //clear div before appending product details
+
       //output product details to UI
       $(".productdetails").append('<p> Name: ' + BBData.products[specificId].name + '</p>');
       $(".productdetails").append('<p> Description: ' + BBData.products[specificId].description + '</p>');

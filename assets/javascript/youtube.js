@@ -10,14 +10,19 @@ var queryYTURL = "";
 
 
 	//Grabbing the values from the inputs and setting them to the global variables
-	$("#submit").on("click", function(event){
+	$("#submit2").on("click", function(event){
 
       event.preventDefault();
 
-      //set vars with input box values
-      q = $("#productName").val().trim();
+      // q = $('select option:selected').text();
+      q = $("#specId option:selected").text();
+      console.log(q);
+      // console.log("result = " + result);
 
-      clearInputs();//function call to clear input values
+      // //set vars with input box values
+      // q = $("#productName").val().trim();
+
+      // clearInputs();//function call to clear input values
 
       queryYTURL = "https://www.googleapis.com/youtube/v3/search?part=" + part + "&key=" + apiKey + "&maxResults=" + maxResults + 
       "&type=" + type + "&q=" + q + " review unboxing&t=" + t;
@@ -59,6 +64,10 @@ function clearInputs()  //function to clear user input fields
 {
   $("#productName").val("");  //clears input box
   $("#catId").val("default"); //clears option box to default value
+  $('#specId')
+    .find('option')
+    .remove()
+    .end();
 
 }
 
