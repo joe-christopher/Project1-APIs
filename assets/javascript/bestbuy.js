@@ -3,6 +3,7 @@
 var BBapiKey = "lHzfxhG8ouWxpRucN0nkcCCa";
 var queryBBURL = "";
 var catagoryId = "";
+var specificId = "";
 
 	//Grabbing the values from the inputs and setting them to the global variables
 	$("#submit").on("click", function(event){
@@ -17,7 +18,7 @@ var catagoryId = "";
     catagoryId = $("#catId").val();
 
     queryBBURL = "https://api.bestbuy.com/v1/products((search=" + q + ")&(categoryPath.id=" + catagoryId + "))?apiKey=" +
-    BBapiKey + "&sort=name.asc&show=name,description,image,images,modelNumber,regularPrice,upc,salePrice,features.feature&pageSize=20&format=json";
+    BBapiKey + "&sort=name.dsc&show=name,description,image,images,modelNumber,regularPrice,upc,salePrice,features.feature&pageSize=20&format=json";
 
     $(".productdetails").empty();  //clear div before appending product details
 
@@ -36,17 +37,32 @@ function runBBQuery(queryBBURL) {
     url: queryBBURL,
     method: "GET"
   }).done(function(BBData) {
+
+    console.log(BBData);
   
-    $(".productdetails").append('<p> Name: ' + BBData.products[0].name + '</p>');
-    $(".productdetails").append('<p> Description: ' + BBData.products[0].description + '</p>');
-    $(".productdetails").append('<p> Manufacturer: ' + BBData.products[0].manufacturer + '</p>');
-    $(".productdetails").append('<p> Model Number: ' + BBData.products[0].modelNumber + '</p>');
-    $(".productdetails").append('<p> Regular Price: ' + BBData.products[0].regularPrice + '</p>');
-    $(".productdetails").append('<p> Sale Price: ' + BBData.products[0].salePrice + '</p>');
-    $(".productdetails").append('<p> UPC: ' + BBData.products[0].upc + '</p>');
-    $(".productdetails").append('<p> URL: ' + BBData.products[0].url + '</p>');
-    $(".productdetails").append('<img src=' + BBData.products[0].image + '>');
-    
+    //populate new option list with values from API call
+    $.each(BBData.products, function( index, name ){
+      $('#specId').append($('<option>', { 
+        value: index,
+        text : BBData.products[index].name
+      }));
+    });
+
+    specificId = $("#specId").val();
+
+    $(".productdetails").append('<p> Name: ' + BBData.products[specificId].name + '</p>');
+    $(".productdetails").append('<p> Description: ' + BBData.products[specificId].description + '</p>');
+    $(".productdetails").append('<p> Short Description: ' + BBData.products[specificId].shortDescription + '</p>');
+    $(".productdetails").append('<p> Manufacturer: ' + BBData.products[specificId].manufacturer + '</p>');
+    $(".productdetails").append('<p> Model Number: ' + BBData.products[specificId].modelNumber + '</p>');
+    $(".productdetails").append('<p> Regular Price: ' + BBData.products[specificId].regularPrice + '</p>');
+    $(".productdetails").append('<p> Sale Price: ' + BBData.products[specificId].salePrice + '</p>');
+    $(".productdetails").append('<p> Customer Review Average: ' + BBData.products[specificId].customerReviewAverage  + '</p>');
+    $(".productdetails").append('<p> UPC: ' + BBData.products[specificId].upc + '</p>');
+    $(".productdetails").append('<p> URL: ' + BBData.products[specificId].url + '</p>');
+    $(".productdetails").append('<p> Mobile URL: ' + BBData.products[specificId].mobileUrl + '</p>');
+    $(".productdetails").append('<img src=' + BBData.products[specificId].image + '>');
+   
   })
 
 }

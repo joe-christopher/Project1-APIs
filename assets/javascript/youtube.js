@@ -55,7 +55,7 @@ function runYTQuery(queryYTURL) {
   
 }
 
-function clearInputs()
+function clearInputs()  //function to clear user input fields
 {
   $("#productName").val("");  //clears input box
   $("#catId").val("default"); //clears option box to default value
