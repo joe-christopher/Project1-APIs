@@ -41,3 +41,22 @@ button {
 p {
     font-size: 20px;
 }
+
+.bb{ 
+    margin-left: 0px;
+    height: 275px;
+    width: 500px;
+}
+
+.plus{ 
+    margin-left: -120px;
+    height: 200px;
+    width: 200px;
+}
+
+.yt{ 
+    height: 320px;
+    width: 550px;
+    margin-left: -50px;
+    margin-top: -70px;
+}
