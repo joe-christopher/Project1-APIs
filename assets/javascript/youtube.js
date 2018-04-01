@@ -14,6 +14,10 @@ var queryYTURL = "";
 
       event.preventDefault();
 
+      //show divs to displau product info and videos
+      $(".prodInfo").show();
+      $(".prodVideos").show();
+
       //grab the label from the option selection drop down list
       //and use to search youtube and display specific product details
       q = $("#specId option:selected").text();
@@ -62,15 +66,15 @@ $("#clearBtn").on("click", function(event){
 
 });
 
-function clearInputs()  //function to clear user input fields
-{
-  $("#productName").val("");  //clears input box
-  $("#catId").val("default"); //clears option box to default value
-  $('#specId')  //clears 2nd option box with API data
-    .find('option')
-    .remove()
-    .end();
-}
+// function clearInputs()  //function to clear user input fields
+// {
+//   $("#productName").val("");  //clears input box
+//   $("#catId").val("default"); //clears option box to default value
+//   $('#specId')  //clears 2nd option box with API data
+//     .find('option')
+//     .remove()
+//     .end();
+// }
 
 function clearAll() //clears inputs and divs
 {
@@ -82,5 +86,15 @@ function clearAll() //clears inputs and divs
     .end();
   $(".wells").empty(); 
   $("#product-info").empty();
-  $("#product-pic").empty(); 
+  $("#product-pic").empty();
+  $(".apiDatalist").hide();
+  $(".prodInfo").hide();
+  $(".prodVideos").hide()
 }
+
+$(document).ready(function() {
+  //hide divs not being used initially on page load
+  $(".apiDatalist").hide();
+  $(".prodInfo").hide();
+  $(".prodVideos").hide();
+})

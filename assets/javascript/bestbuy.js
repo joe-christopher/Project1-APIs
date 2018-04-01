@@ -8,7 +8,7 @@ var specificId = "";
 	//Grabbing the values from the inputs and setting them to the global variables
 	$("#submit").on("click", function(event){
 
-		event.preventDefault();
+    event.preventDefault();
 
 		//set vars with input box values
     q = $("#productName").val().trim(); //set search value
@@ -48,6 +48,9 @@ function runBBQuery(queryBBURL) {
       }));
     });
 
+    //show div with new drop down list
+    $(".apiDatalist").show();
+  
     $("#submit2").on("click", function(event){
       
       event.preventDefault();
@@ -60,7 +63,7 @@ function runBBQuery(queryBBURL) {
       $("#product-pic").empty(); 
 
       console.log(BBData.products[specificId]);
-      
+
       //output product details to UI (if they are available)
       if (BBData.products[specificId].name != null && BBData.products[specificId].name != "undefined")
         $("#product-info").append('<p> <b>Name:</b> ' + BBData.products[specificId].name + '</p>');
