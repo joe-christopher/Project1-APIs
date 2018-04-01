@@ -10,3 +10,59 @@ iframe{
 h2{
     text-align: center;
 }
+
+body, .jumbotron {
+    background-color:whitesmoke;
+    color: white;
+}
+
+button {
+    background-color: darkgray;
+    color: white;
+}
+#panelTitle {
+    font-size: 20px;
+    margin: 40px;
+}
+#panelHeading {
+    background-color: dimgrey;
+    text-align: center;
+}
+#panel-body {
+    background-color: darkred;
+    margin-right: 60px;
+}
+
+#product-info {
+    color: black;
+}
+#product-details {
+    background-color: dimgrey;
+    height: 40px;
+}
+p {
+    font-size: 20px;
+}
+
+.bb{ 
+    margin-left: 0px;
+    height: 275px;
+    width: 500px;
+}
+
+.plus{ 
+    margin-left: -120px;
+    height: 200px;
+    width: 200px;
+}
+
+.yt{ 
+    height: 320px;
+    width: 550px;
+    margin-left: -50px;
+    margin-top: -70px;
+}
+
+#submit2{
+    margin-top: o;
+}
