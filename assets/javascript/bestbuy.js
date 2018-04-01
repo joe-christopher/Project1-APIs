@@ -1,4 +1,3 @@
-
 //Best Buy API parameters, hard coded  product name and category for testing
 var BBapiKey = "lHzfxhG8ouWxpRucN0nkcCCa";
 var queryBBURL = "";
@@ -10,20 +9,48 @@ var specificId = "";
 
     event.preventDefault();
 
-		//set vars with input box values
     q = $("#productName").val().trim(); //set search value
-    q = q.split(" ").join("&search="); //remove inner whitepaces, add URL requirements
+
+    //check is search term was submitted
+    if (q === "")
+    {
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        modal.style.display = "block";
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    } 
+    else  //search term exists, proceed with API call
+    {
+		
+      q = q.split(" ").join("&search="); //remove inner whitepaces, add URL requirements
 
      
-    catagoryId = $("#catId").val();
+      catagoryId = $("#catId").val();
 
-    queryBBURL = "https://api.bestbuy.com/v1/products((search=" + q + ")&(categoryPath.id=" + catagoryId + "))?apiKey=" +
-    BBapiKey + "&sort=name.dsc&show=all&pageSize=50&format=json";
+      queryBBURL = "https://api.bestbuy.com/v1/products((search=" + q + ")&(categoryPath.id=" + catagoryId + "))?apiKey=" +
+      BBapiKey + "&sort=name.dsc&show=all&pageSize=50&format=json";
 
-    $("#product-info").empty();  //clear div before appending product details
-    $("#product-pic").empty();
+      $("#product-info").empty();  //clear div before appending product details
+      $("#product-pic").empty();
 
-    runBBQuery(queryBBURL);  //make AJAX call
+      runBBQuery(queryBBURL);  //make AJAX call
+    }
 });
 
 

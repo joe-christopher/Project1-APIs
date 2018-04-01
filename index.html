@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Best Buy - YouTube</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
@@ -32,7 +30,7 @@
             <div class="col-lg-6">
                 <div class="panel panel-default">
                     <div id="panelHeading" class="panel-heading">
-                        <h3 id= panelTitle class="panel-title">User Input</h3>
+                        <h3 id= panelTitle class="panel-title">Product Lookup</h3>
                     </div>
                     <div id="panelBody" class="panel-body">
                         <form>
@@ -109,7 +107,7 @@
                                         <div class="panel panel-default">
                                             <div id="product-info" class="panel-body">
                                                 <!-- product info goes here -->
-                                            </div>                                                
+                                            </div>                                      
                                         </div> 
                                     </div>
 
@@ -146,10 +144,21 @@
 
     </div>      
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Please enter search term(s) before hitting submit</p>
+      <p>.....................try again</p>
+    </div>
+  
+  </div>
 
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="assets/javascript/bestbuy.js"></script>
     <script src="assets/javascript/youtube.js"></script>
     

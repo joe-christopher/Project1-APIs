@@ -32,6 +32,7 @@ button {
 
 #product-info {
     color: black;
+    border-width: 0;
 }
 #product-details {
     background-color: dimgrey;
@@ -63,4 +64,49 @@ p {
 
 #submit2{
     margin-top: 20px;
+}
+
+/* CSS for modal */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 400px;
+    height: 400px;
+    overflow: auto; /* Enable scroll if needed */
+    color: black;
+    margin-left: 175px;
+    margin-top: 200px;
+    background-color: transparent;
+    border-style: none;
+    box-shadow: none;
+
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
