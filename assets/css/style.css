@@ -140,3 +140,47 @@ p {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+@media only screen and (max-width: 1200px) {
+    .bb{ 
+        margin-left: 0px;
+        height: 275px;
+        width: 425px;
+    }
+    
+    .plus{ 
+        margin-left: -120px;
+        height: 200px;
+        width: 200px;
+    }
+    
+    .yt{ 
+        height: 320px;
+        width: 515px;
+        margin-left: -50px;
+        margin-top: -70px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .bb{ 
+        margin-left: 75px;
+        height: 275px;
+        width: 425px;
+    }
+    
+    .plus{ 
+        margin-left: 150px;
+        height: 200px;
+        width: 200px;
+        margin-top: -75px;
+    }
+    
+    .yt{ 
+        height: 320px;
+        width: 515px;
+        margin-left: -25px;
+        margin-top: -70px;
+    }
+}
