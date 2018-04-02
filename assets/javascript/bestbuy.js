@@ -19,7 +19,7 @@ var specificId = "";
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
-
+        fadeDuration: 100;
         modal.style.display = "block";
 
 
@@ -65,8 +65,8 @@ function runBBQuery(queryBBURL) {
     method: "GET"
   }).done(function(BBData) {
 
-  console.log("total = " + BBData.total);
-  
+  console.log(BBData);
+
   if (BBData.total > 0)
   {
     //populate new option list with values returned from API call
@@ -137,7 +137,7 @@ function runBBQuery(queryBBURL) {
       var span = document.getElementsByClassName("close")[0];
 
       modal.style.display = "block";
-
+      fadeDuration: 100;
 
       // When the user clicks on <span> (x), close the modal
       span.onclick = function() {
