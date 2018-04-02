@@ -15,6 +15,7 @@ body, .jumbotron {
     background-color:#163b61;
     color: white;
 }
+
  #specId{
      margin-top: 25px;
  }
@@ -75,6 +76,7 @@ p {
     margin-top: -70px;
 }
 
+
 #submit2{
     margin-top: 20px;
     background-color: #fdf051;
@@ -87,6 +89,13 @@ p {
  .panel{
     box-shadow: 10px 10px black;
  }
+
+
+ .details-panel, .details-pic{
+    border: none;
+    box-shadow: none;
+    
+}
 /* CSS for modal */
 /* The Modal (background) */
 .modal {
