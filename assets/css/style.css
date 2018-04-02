@@ -15,22 +15,32 @@ body, .jumbotron {
     background-color:#163b61;
     color: white;
 }
-
+ #specId{
+     margin-top: 25px;
+ }
 button {
     background-color: #fdf051;
     color:black;
+    box-shadow: 10px 10px black;
+    text-shadow: 2px 2px 4px white;
 }
 #panelTitle {
     font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
 }
 #panelHeading {
     background-color: #fdf051;
     color: black;
 }
-
-#prodcut-videos, #productvideos{
+#clearBtn {
+    margin-left: 15px;
+}
+#product-videos, #productvideos{
     color: white;
     background-color: #e83324;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px black;
 }
 #product-info {
     color: black;
@@ -72,6 +82,10 @@ p {
 }
  h3 {
      font-size: 20px;
+ }
+
+ .panel{
+    box-shadow: 10px 10px black;
  }
 /* CSS for modal */
 /* The Modal (background) */
