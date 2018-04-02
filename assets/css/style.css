@@ -17,28 +17,31 @@ body, .jumbotron {
 }
 
 button {
-    background-color: darkgray;
-    color: white;
+    background-color: #fdf051;
+    color:black;
 }
 #panelTitle {
     font-size: 20px;
 }
 #panelHeading {
-    background-color: dimgrey;
-}
-#panel-body {
-    background-color: darkred;
+    background-color: #fdf051;
+    color: black;
 }
 
+#prodcut-videos, #productvideos{
+    color: white;
+    background-color: #e83324;
+}
 #product-info {
     color: black;
     border-width: 0;
 }
 #product-details {
-    background-color: dimgrey;
-
+    background-color: #fdf051;
+    color: black;
     height: 40px;
-    }
+}
+
 p {
     font-size: 20px;
 }
@@ -64,8 +67,12 @@ p {
 
 #submit2{
     margin-top: 20px;
+    background-color: #fdf051;
+    color: black;
 }
-
+ h3 {
+     font-size: 20px;
+ }
 /* CSS for modal */
 /* The Modal (background) */
 .modal {
@@ -75,7 +82,7 @@ p {
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
-    width: 400px;
+    width: 500px;
     height: 400px;
     overflow: auto; /* Enable scroll if needed */
     color: black;
@@ -110,3 +117,4 @@ p {
     text-decoration: none;
     cursor: pointer;
 }
+

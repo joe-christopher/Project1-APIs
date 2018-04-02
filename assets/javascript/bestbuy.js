@@ -59,14 +59,16 @@ function runBBQuery(queryBBURL) {
 
   // The AJAX function uses the queryBBURL and GETS the JSON data associated with it.
   // The data then gets stored in the variable called: "BBData"
-
+ 
   $.ajax({
     url: queryBBURL,
     method: "GET"
   }).done(function(BBData) {
 
-    // console.log(BBData);
+  console.log("total = " + BBData.total);
   
+  if (BBData.total > 0)
+  {
     //populate new option list with values returned from API call
     $.each(BBData.products, function( index, name ){
       $('#specId').append($('<option>', { 
@@ -84,12 +86,9 @@ function runBBQuery(queryBBURL) {
 
       specificId = $("#specId").val(); //get index from new option list
       
-      // console.log("index for bb " + specificId);
 
       $("#product-info").empty();  //clear divs before appending product details
       $("#product-pic").empty(); 
-
-      console.log(BBData.products[specificId]);
 
       //output product details to UI (if they are available)
       if (BBData.products[specificId].name != null && BBData.products[specificId].name != "undefined")
@@ -125,9 +124,35 @@ function runBBQuery(queryBBURL) {
 
       if (BBData.products[specificId].image != null && BBData.products[specificId].image != "undefined") 
         $("#product-pic").append('<img src=' + BBData.products[specificId].image + '>');
-
+    
     });
+  }
+  else
+  {
+    {
+      // Get the modal
+      var modal = document.getElementById('noResultsModal');
 
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      modal.style.display = "block";
+
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+      modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  } 
+  clearAll(); //clears inputs and divs
+  }
    
 })
 

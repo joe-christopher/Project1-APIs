@@ -66,15 +66,7 @@ $("#clearBtn").on("click", function(event){
 
 });
 
-// function clearInputs()  //function to clear user input fields
-// {
-//   $("#productName").val("");  //clears input box
-//   $("#catId").val("default"); //clears option box to default value
-//   $('#specId')  //clears 2nd option box with API data
-//     .find('option')
-//     .remove()
-//     .end();
-// }
+
 
 function clearAll() //clears inputs and divs
 {
