@@ -191,3 +191,13 @@ p {
         margin-top: -70px;
     }
 }
+
+
+#ytvid0,
+#ytvid1,
+#ytvid2,
+#ytvid3,
+iframe{
+    margin-left: 70px;
+    margin-top: 15px;
+}
