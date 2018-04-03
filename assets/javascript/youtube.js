@@ -14,15 +14,14 @@ var queryYTURL = "";
 
       event.preventDefault();
 
-      //show divs to displau product info and videos
+      //show divs to display product info and videos
       $(".prodInfo").show();
       $(".prodVideos").show();
 
       //grab the label from the option selection drop down list
       //and use to search youtube and display specific product details
       q = $("#specId option:selected").text();
-      console.log(q);
-
+      
       queryYTURL = "https://www.googleapis.com/youtube/v3/search?part=" + part + "&key=" + apiKey + "&maxResults=" + maxResults + 
       "&type=" + type + "&q=" + q + " review unboxing&t=" + t;
           
@@ -46,7 +45,10 @@ function runYTQuery(queryYTURL) {
         //loop to set video id from 4 objects returned from API, dump to div
         for (i = 0; i < maxResults; i++){
      
-          var iframeString = "<iframe id=ytvid" + i + " width=\"420\" height=\"345\" src=\"https://www.youtube.com/embed/"
+          // var iframeString = "<iframe id=ytvid" + i + " width=\"420\" height=\"345\" src=\"https://www.youtube.com/embed/"
+          // + YTData.items[i].id.videoId + "\"><iframe>";  //build iframe element
+
+          var iframeString = "<iframe id=ytvid" + i + " width=50% height=\"345\" src=\"https://www.youtube.com/embed/"
           + YTData.items[i].id.videoId + "\"><iframe>";  //build iframe element
 
         $(".wells").append(iframeString);  //add iframe elemen to div

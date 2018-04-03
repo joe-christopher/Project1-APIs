@@ -120,7 +120,6 @@ function runBBQuery(queryBBURL) {
       
       if (BBData.products[specificId].url != null && BBData.products[specificId].url != "undefined") 
         $("#product-info").append('<p> <b>URL:</b> <a href="' + BBData.products[specificId].url + '" target="_blank">Product Link</a></p>');
-        console.log('<p> URL: <a href="' + BBData.products[specificId].url + '" target="_blank">Product Link</a></p>');
 
       if (BBData.products[specificId].image != null && BBData.products[specificId].image != "undefined") 
         $("#product-pic").append('<img src=' + BBData.products[specificId].image + '>');

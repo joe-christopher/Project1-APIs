@@ -3,7 +3,7 @@
 #ytvid2,
 #ytvid3,
 iframe{
-    margin-left: 70px;
+    margin-left: 0px;
     margin-top: 15px;
 }
 
@@ -193,11 +193,3 @@ p {
 }
 
 
-#ytvid0,
-#ytvid1,
-#ytvid2,
-#ytvid3,
-iframe{
-    margin-left: 70px;
-    margin-top: 15px;
-}
