@@ -90,7 +90,22 @@
 
 
             <div class="col-md-6">
-                <!-- add firebase here -->
+                    <div class="panel panel-default">
+                            <div id="panelHeading" class="panel-heading">
+                                <h3 id= panelTitle class="panel-title">Recently Searched Products</h1>
+                            </div>
+        
+                            <div class="panel-body searched-products">
+                                <table class="table table-hover" id="producttable">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="display"></tbody>
+                                </table>
+                            </div>
+                        </div>
 
             </div>
 
@@ -172,6 +187,8 @@
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="assets/javascript/firebase.js"></script>
     <script src="assets/javascript/bestbuy.js"></script>
     <script src="assets/javascript/youtube.js"></script>
     

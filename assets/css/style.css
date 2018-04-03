@@ -7,6 +7,13 @@ iframe{
     margin-top: 15px;
 }
 
+.searched-products {
+    overflow: auto;
+    height: 395px;
+}
+th, tr{
+    color: black;
+}
 h2{
     text-align: center;
 }
