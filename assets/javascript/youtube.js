@@ -50,6 +50,8 @@ function runYTQuery(queryYTURL) {
           + YTData.items[i].id.videoId + "\"><iframe>";  //build iframe element
 
         $(".wells").append(iframeString);  //add iframe elemen to div
+
+        clearInputs();  //clear input fields after results are displayed
    
     }
 
@@ -66,8 +68,15 @@ $("#clearBtn").on("click", function(event){
 
 });
 
-
-
+function clearInputs()
+{
+  $("#productName").val("");  //clears input box
+  $("#catId").val("default"); //clears option box to default value
+  $('#specId')  //clears 2nd option box with API data
+    .find('option')
+    .remove()
+    .end();
+}
 function clearAll() //clears inputs and divs
 {
   $("#productName").val("");  //clears input box

@@ -3,16 +3,6 @@
 
 $(document).ready(function() {
 
-    //Initialize Firebase
-//    var config = {
-//       apiKey: "AIzaSyAY6UOUpb0rxIEZUVmVq-tujxsDuwe6HYw",
-//       authDomain: "train-schedule-55e63.firebaseapp.com",
-//       databaseURL: "https://train-schedule-55e63.firebaseio.com",
-//       projectId: "train-schedule-55e63",
-//       storageBucket: "",
-//       messagingSenderId: "871098022130"
-//       }
-    
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAhqwNxYb9cXVL7ZI9Z9-PSXyWMKkscZms",
