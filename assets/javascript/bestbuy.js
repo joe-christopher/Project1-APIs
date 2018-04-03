@@ -107,10 +107,10 @@ function runBBQuery(queryBBURL) {
         $("#product-info").append('<p> <b>Model Number:</b> ' + BBData.products[specificId].modelNumber + '</p>');
 
       if (BBData.products[specificId].regularPrice != null && BBData.products[specificId].regularPrice != "undefined") 
-        $("#product-info").append('<p> <b>Regular Price:</b> ' + BBData.products[specificId].regularPrice + '</p>');
+        $("#product-info").append('<p> <b>Regular Price:</b> $' + BBData.products[specificId].regularPrice + '</p>');
 
       if (BBData.products[specificId].salePrice != null && BBData.products[specificId].salePrice != "undefined") 
-        $("#product-info").append('<p> <b>Sale Price:</b> ' + BBData.products[specificId].salePrice + '</p>');
+        $("#product-info").append('<p> <b>Sale Price:</b> $' + BBData.products[specificId].salePrice + '</p>');
 
       if (BBData.products[specificId].customerReviewAverage != null && BBData.products[specificId].customerReviewAverage != "undefined") 
         $("#product-info").append('<p> <b>Customer Review Average (0-5 stars):</b> ' + BBData.products[specificId].customerReviewAverage  + '</p>');
@@ -122,7 +122,7 @@ function runBBQuery(queryBBURL) {
         $("#product-info").append('<p> <b>URL:</b> <a href="' + BBData.products[specificId].url + '" target="_blank">Product Link</a></p>');
 
       if (BBData.products[specificId].image != null && BBData.products[specificId].image != "undefined") 
-        $("#product-pic").append('<img src=' + BBData.products[specificId].image + '>');
+        $("#product-pic").append('<img id="ppic" src=' + BBData.products[specificId].image + '>');
     
     });
   }

@@ -44,9 +44,6 @@ function runYTQuery(queryYTURL) {
 
         //loop to set video id from 4 objects returned from API, dump to div
         for (i = 0; i < maxResults; i++){
-     
-          // var iframeString = "<iframe id=ytvid" + i + " width=\"420\" height=\"345\" src=\"https://www.youtube.com/embed/"
-          // + YTData.items[i].id.videoId + "\"><iframe>";  //build iframe element
 
           var iframeString = "<iframe id=ytvid" + i + " width=50% height=\"345\" src=\"https://www.youtube.com/embed/"
           + YTData.items[i].id.videoId + "\"><iframe>";  //build iframe element
