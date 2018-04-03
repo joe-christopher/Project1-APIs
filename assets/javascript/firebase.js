@@ -4,16 +4,26 @@
 $(document).ready(function() {
 
     //Initialize Firebase
-   var config = {
-      apiKey: "AIzaSyAY6UOUpb0rxIEZUVmVq-tujxsDuwe6HYw",
-      authDomain: "train-schedule-55e63.firebaseapp.com",
-      databaseURL: "https://train-schedule-55e63.firebaseio.com",
-      projectId: "train-schedule-55e63",
-      storageBucket: "",
-      messagingSenderId: "871098022130"
-      }
+//    var config = {
+//       apiKey: "AIzaSyAY6UOUpb0rxIEZUVmVq-tujxsDuwe6HYw",
+//       authDomain: "train-schedule-55e63.firebaseapp.com",
+//       databaseURL: "https://train-schedule-55e63.firebaseio.com",
+//       projectId: "train-schedule-55e63",
+//       storageBucket: "",
+//       messagingSenderId: "871098022130"
+//       }
     
-      firebase.initializeApp(config);
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAhqwNxYb9cXVL7ZI9Z9-PSXyWMKkscZms",
+    authDomain: "project-1-apis.firebaseapp.com",
+    databaseURL: "https://project-1-apis.firebaseio.com",
+    projectId: "project-1-apis",
+    storageBucket: "project-1-apis.appspot.com",
+    messagingSenderId: "174037713136"
+  };
+  firebase.initializeApp(config);
+
   
       //Set db instance
       var productDatabase = firebase.database();
