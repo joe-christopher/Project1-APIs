@@ -75,6 +75,7 @@ function clearInputs()
     .find('option')
     .remove()
     .end();
+  $(".apiDatalist").hide();
 }
 function clearAll() //clears inputs and divs
 {
