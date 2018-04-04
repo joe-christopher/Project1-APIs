@@ -46,8 +46,8 @@ var specificId = "";
       queryBBURL = "https://api.bestbuy.com/v1/products((search=" + q + ")&(categoryPath.id=" + catagoryId + "))?apiKey=" +
       BBapiKey + "&sort=name.dsc&show=all&pageSize=50&format=json";
 
-      $("#product-info").empty();  //clear div before appending product details
-      $("#product-pic").empty();
+      // $("#product-info").empty();  //clear div before appending product details
+      // $("#product-pic").empty();
 
       runBBQuery(queryBBURL);  //make AJAX call
     }
