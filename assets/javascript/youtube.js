@@ -3,54 +3,53 @@ var apiKey = "AIzaSyAayGDTZosMnbroBx71FzowCC-bB1bPEno";
 var part = "snippet";
 var t = "jsonc"
 var q = "";
-var maxResults = 4;
+var maxResults = 6;
 var type = "video";
 var queryYTURL = "";
 
 
 	//Grabbing the values from the inputs and setting them to the global variables
-	$("#submit").on("click", function(event){
+	$("#submit2").on("click", function(event){
 
-		event.preventDefault();
+      event.preventDefault();
 
-		//set vars with input box values
-        q = $("#productName").val().trim();
-        
-        queryYTURL = "https://www.googleapis.com/youtube/v3/search?part=" + part + "&key=" + apiKey + "&maxResults=" + maxResults + 
-        "&type=" + type + "&q=" + q + " review unboxing&t=" + t;
-        
-        console.log("Product : " + q);
-        console.log(queryYTURL);
+      //show divs to display product info and videos
+      $(".prodInfo").show();
+      $(".prodVideos").show();
 
-        runYTQuery(queryYTURL); //test function call
+      //grab the label from the option selection drop down list
+      //and use to search youtube and display specific product details
+      q = $("#specId option:selected").text();
+      
+      queryYTURL = "https://www.googleapis.com/youtube/v3/search?part=" + part + "&key=" + apiKey + "&maxResults=" + maxResults + 
+      "&type=" + type + "&q=" + q + " review unboxing&t=" + t;
+          
+      runYTQuery(queryYTURL); //queryURL built, call function to make AJAX call
     });
     
 
 // This runYTQuery function expects 1 parameter: the final URL to download data from)
 function runYTQuery(queryYTURL) {
 
-  // The AJAX function uses the queryYTURL and GETS the JSON data associated with it.
-  // The data then gets stored in the variable called: "YTData"
+// The AJAX function uses the queryYTURL and GETS the JSON data associated with it.
+// The data then gets stored in the variable called: "YTData"
 
-  $.ajax({
-    url: queryYTURL,
-    method: "GET"
-  }).done(function(YTData) {
+    $.ajax({
+      url: queryYTURL,
+      method: "GET"
+    }).done(function(YTData) {
 
-    // Logging the URL so we have access to it for troubleshooting
-    console.log("URL: " + queryYTURL);
+      $(".wells").empty(); //clear div before appending videos
 
-    console.log(YTData);
+        //loop to set video id from 4 objects returned from API, dump to div
+        for (i = 0; i < maxResults; i++){
 
-    //loop to set video id from 4 objects returned from API, dump to div
-    for (i = 0; i < maxResults; i++){
-     
-        var iframeString = "<iframe id=ytvid" + i + " width=\"420\" height=\"345\" src=\"https://www.youtube.com/embed/"
-        + YTData.items[i].id.videoId + "\"><iframe>";
+          var iframeString = "<iframe id=ytvid" + i + " width=50% height=\"345\" src=\"https://www.youtube.com/embed/"
+          + YTData.items[i].id.videoId + "\"><iframe>";  //build iframe element
 
-        console.log(iframeString);
+        $(".wells").append(iframeString);  //add iframe elemen to div
 
-        $(".wells").append(iframeString);
+        clearInputs();  //clear input fields after results are displayed
    
     }
 
@@ -60,7 +59,42 @@ function runYTQuery(queryYTURL) {
   
 }
 
+$("#clearBtn").on("click", function(event){
 
+  event.preventDefault();
+  clearAll();
 
+});
 
+function clearInputs()
+{
+  $("#productName").val("");  //clears input box
+  $("#catId").val("default"); //clears option box to default value
+  // $('#specId')  //clears 2nd option box with API data
+  //   .find('option')
+  //   .remove()
+  //   .end();
+  // $(".apiDatalist").hide();
+}
+function clearAll() //clears inputs and divs
+{
+  $("#productName").val("");  //clears input box
+  $("#catId").val("default"); //clears option box to default value
+  $('#specId')  //clears 2nd option box with API data
+    .find('option')
+    .remove()
+    .end();
+  $(".wells").empty(); 
+  $("#product-info").empty();
+  $("#product-pic").empty();
+  $(".apiDatalist").hide();
+  $(".prodInfo").hide();
+  $(".prodVideos").hide()
+}
 
+$(document).ready(function() {
+  //hide divs not being used initially on page load
+  $(".apiDatalist").hide();
+  $(".prodInfo").hide();
+  $(".prodVideos").hide();
+})
